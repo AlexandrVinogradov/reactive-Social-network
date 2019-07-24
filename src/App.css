@@ -1,4 +1,8 @@
+body {
+  background-color: rgb(29, 29, 29);
+}
 .app-wrapper {
+  background-color: rgb(29, 29, 29);
   margin: 0 auto;
   width: 1200px;
   display: grid;
@@ -9,23 +13,27 @@
 
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
+  grid-gap: 10px;
 }
-.header {
-  grid-area: h;
-  background-color: rgb(191, 255, 108);
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
-.header img {
-  width: 20px;
+a {
+  text-decoration: none;
 }
-.nav {
-  grid-area: n;
-  background-color: rgb(108, 255, 174);
-}
-.content {
-  grid-area: c;
-  background-color: rgb(253, 255, 108);
-}
-.content img {
-  width: 200px;
+
+.app-wrapper-content {
+  .content {
+    grid-area: c;
+    background-color: rgb(29, 29, 29);
+  }
+  .panorama {
+    width: auto;
+    height: 300px;
+  }
+  .avatar {
+    width: 200px;
+  }
 }
