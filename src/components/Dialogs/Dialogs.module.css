@@ -1,0 +1,31 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
+}
+
+.dialogs_items {
+    padding: 10px;
+}
+.dialogs_items .active {
+    color:rgb(0, 217, 255);
+}
+.user {
+
+}
+.user a {
+    color:rgb(201, 124, 24);
+}
+.user .active {
+    color:rgb(0, 217, 255);
+}
+
+.messages {
+    padding: 10px;
+}
+.message {
+
+}
+
+
+

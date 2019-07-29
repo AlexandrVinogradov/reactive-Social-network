@@ -1,0 +1,20 @@
+.panorama {
+  width: 1000px;
+}
+.avatar {
+  width: 200px;
+}
+
+
+.description_block {
+  display: grid;
+
+  /* grid-template-rows: 60px 1fr; */
+  grid-template-columns: 2fr 10fr;
+  /* grid-gap: 10px; */
+
+}
+.description_block p {
+  /* display: block; */
+  grid-area: c;
+}
