@@ -1,9 +1,7 @@
-// action type 
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+import profileReducer from "./profile-reducer";
+import newsReducer from "./news-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let store = {
     _state: {
@@ -15,7 +13,7 @@ let store = {
                 { id: '2', message: 'gdsgsdgsgsgs', likesCount: 1245 },
                 { id: '2', message: 'IccccxDDDx', likesCount: 9 }
             ],
-            newPostText: 'texarea'
+            newPostText: ''
         },
         dialogsPage: {
             dialogs: [
@@ -31,63 +29,39 @@ let store = {
                 { id: '2', message: 'Hoy are you?' },
                 { id: '3', message: 'Yo' }
             ],
-            newMessageText: 'enter your message'
+            newMessageText: ''
+        },
+        newsPage: {
+            news: [
+                { id: '1', content: 'This is firs news' },
+                { id: '2', content: 'This is second news' },
+                { id: '3', content: 'This is third news' },
+                { id: '4', content: 'This is fourth news' }
+            ],
+            newsText: ''
         }
     },
     _callSubscriber() {
         console.log('state chanhed');
     },
-
+    // Функция, которая сообщает внешнему миру, что state изменился (паттерн)
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    // метод для взятия файлов из srore 
+    // метод для взятия файлов из store 
     getState() {
         return this._state;
     },
-
-    // Метод из которого можно дергать функции
+    // dispatch Метод из которого можно дергать функции
     dispatch(action) {   // { type: 'ADD-POST' }
-        debugger;
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === 'ADD-MESSAGE') {
-            let newMessage = {
-                id: 4,
-                message: this._state.dialogsPage.newMessageText
-            };
-            this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.newMessageText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.newsPage = newsReducer(this._state.newsPage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+
+        this._callSubscriber(this._state);
     }
-
 }
-
-
-// ActionCreator
-export const addPostActionCreator = () => ({ type: ADD_POST });
-export const updateNewPostTextActionCreator = (text) =>
-    ({ type: UPDATE_NEW_POST_TEXT, newText: text });
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
-export const updateNewMessageTextActionCreator = (text) =>
-    ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text });
-
-
-
 
 export default store;
 window.store = store;
+
