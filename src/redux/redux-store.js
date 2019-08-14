@@ -13,7 +13,10 @@ let reducers = combineReducers({
 
 let store = createStore(reducers);
 
+window.store = store;
+
 export default store;
+
 
 
 // в установленном redux(е) уже есть:

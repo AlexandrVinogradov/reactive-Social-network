@@ -15,16 +15,17 @@ let initialState = {
 const newsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_NEW:
-            let newText = {
-                id: 5,
-                content: state.newsText
-            };
-            state.news.push(newText);
-            state.newsText = '';
-            return state;
+            let newText = state.newsText;
+            return {
+                ...state,
+                news: [...state.news, {id: 5, content: newText} ],
+                newsText: ''
+            }
         case UPDATE_NEW_NEWS_TEXT:
-            state.newsText = action.newText;
-            return state;
+            return{
+                ...state,
+                newsText: action.newText
+            }
         default:
             return state;
     }

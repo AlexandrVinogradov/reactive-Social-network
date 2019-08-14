@@ -1,6 +1,5 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-
 // initialState - одноразовый объект, если state не придет в state - ты встанешь тудва вместо него 
 let initialState = {
     dialogs: [
@@ -18,20 +17,24 @@ let initialState = {
     ],
     newMessageText: ''
 }
-
 const dialogsReducer = (state = initialState, action) => {
+    // делаем копию стейта, чтобы connect перерисовывал изменения
+    // так как в объекте есть еще объекты их надо тоже скопировать 
+    // dialogs меняться не будет, поэтому его не копируем
+
     switch (action.type) {
-        case ADD_MESSAGE:
-            let newMessage = {
-                id: 4,
-                message: state.newMessageText
-            };
-            state.messages.push(newMessage);
-            state.newMessageText = '';
-            return state;
         case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.newText;
-            return state;
+            return {
+                ...state,
+                newMessageText: action.newText
+            };
+        case ADD_MESSAGE:
+            let newMessage = state.newMessageText;
+            return {
+                ...state,
+                newMessageText: '',
+                messages: [...state.messages, { id: 4, message: newMessage }],
+            };
         default:
             return state;
     }

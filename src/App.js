@@ -10,11 +10,6 @@ import {Route} from "react-router-dom";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NewsContainer from './components/News/NewsContainer';
 
-
-
-
-
-
 const App = (props) => {
 
   return (
