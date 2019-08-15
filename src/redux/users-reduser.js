@@ -1,0 +1,56 @@
+import { statement } from "@babel/template";
+
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET_USERS';
+
+let initialState = {
+    users: []
+}
+
+
+const usersReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case FOLLOW: {
+            return {
+                ...state,
+                users: state.users.map(u => {    //49 26:00
+                    if (u.id === action.userId) {
+                        return { ...u, followed: true }
+                    }
+                    return u;
+                })
+            }
+        }
+        case UNFOLLOW: {
+            return {
+                ...state,
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return { ...u, followed: false }
+                    }
+                    return u;
+                })
+            }
+        }
+        case SET_USERS: {
+            return {
+                ...state,
+                users: [...state.users, ...action.users]
+            }
+        }
+        default:
+            return state;
+    }
+}
+
+// action creator
+export const followAC = (userId) => ({ type: FOLLOW, userId });
+export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId });
+
+// action который принемает  юзеров с сервера
+export const setUsersAC = (users) => ({ type: SET_USERS, users });
+
+
+export default usersReducer;
+

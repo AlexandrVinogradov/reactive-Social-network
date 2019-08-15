@@ -2,13 +2,15 @@ import { createStore, combineReducers } from "redux";
 import profileReducer from "./profile-reducer"
 import newsReducer from "./news-reducer"
 import dialogsReducer from "./dialogs-reducer"
+import usersReducer from "./users-reduser";
 
 // склеивает reduser(ы) в кучу
 // ключ как в state
 let reducers = combineReducers({
     profilePage: profileReducer,
     newsPage: newsReducer,
-    dialogsPage: dialogsReducer
+    dialogsPage: dialogsReducer,
+    usersPage: usersReducer
 });
 
 let store = createStore(reducers);

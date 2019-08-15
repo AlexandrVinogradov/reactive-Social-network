@@ -9,6 +9,7 @@ import Friends from './components/Friends/Friends';
 import {Route} from "react-router-dom";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NewsContainer from './components/News/NewsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
 
@@ -17,22 +18,20 @@ const App = (props) => {
       <Header />
       <Navbar />
       <div className='app-wraper-content'>
-
         <Route path='/dialogs'
-          render={() => <DialogsContainer store={props.store} />} />
-
+          render={() => <DialogsContainer />} />
         <Route path='/profile'
-          render={() => <Profile store={props.store} />} />
-
+          render={() => <Profile />} />
         <Route path='/news'
-          render={() => <NewsContainer store={props.store} />} />
-
+          render={() => <NewsContainer />} />
         <Route path='/music'
           render={() => <Music />} />
         <Route path='/settings'
           render={() => <Settings />} />
         <Route path='/friends'
           render={() => <Friends />} />
+        <Route path='/users'
+          render={() => <UsersContainer />} />
       </div>
     </div>
   )
