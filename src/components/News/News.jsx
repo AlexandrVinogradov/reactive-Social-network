@@ -9,9 +9,9 @@ const News = (props) => {
     let newsElements = state.news.map(n => <NewsItem content={n.content} id={n.id} />);
     let newsText = state.newsText;
 
-    let onSendNewsClick = () => {
-        props.onSendNewsClick();
-    }
+    // let onSendNewsClick = () => {
+    //     props.onSendNewsClick();
+    // }
     let onAddNews = (e) => {
         let text = e.target.value;
         props.updateNewNewsText(text);
@@ -28,7 +28,7 @@ const News = (props) => {
                         value={newsText}
                         placeholder={'Enter your news'} />
                 </div>
-                <button onClick={onSendNewsClick}>Send News</button>
+                <button onClick={() => {props.onSendNewsClick()}}>Send News</button>
                 <div>
 
                 </div>
