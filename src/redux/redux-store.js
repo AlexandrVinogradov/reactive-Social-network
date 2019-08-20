@@ -13,6 +13,8 @@ let reducers = combineReducers({
     usersPage: usersReducer
 });
 
+
+//что это?
 let store = createStore(reducers);
 
 window.store = store;
