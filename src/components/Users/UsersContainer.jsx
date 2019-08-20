@@ -10,7 +10,6 @@ import {
     toggleIsFetching
 } from '../../redux/users-reduser';
 import Users from './Users';
-import preloader from './../../assets/images/preloader.gif';
 import Preloader from '../common/Preloader/Preloader';
 
 class UsersContainer extends React.Component {
@@ -59,28 +58,6 @@ const mapStateToProps = (state) => {
         isFetching: state.usersPage.isFetching
     }
 }
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId));
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId));
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users));
-//         },
-//         setCurrentPage: (pageNumber) => {
-//             dispatch(setCurrentPageAC(pageNumber));
-//         },
-//         setUsersTotalCount: (totalCount) => {
-//             dispatch(setUsersTotalCountAC(totalCount));
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching));
-//         }
-//     }
-// }
 
 export default connect(mapStateToProps, 
     {follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching
