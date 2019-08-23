@@ -21,7 +21,7 @@ const ProfileInfo = (props) => {
             <img src={props.profile.photos.large}/>
 
             <p>
-                description
+                {props.profile.aboutMe}
             </p>
         </div>
         

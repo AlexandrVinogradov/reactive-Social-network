@@ -6,13 +6,12 @@ let initialState = {
     posts: [
         { id: '1', message: 'Hi, how are you?', likesCount: 13 },
         { id: '2', message: '123', likesCount: 19 },
-        { id: '2', message: 'dddddddddd', likesCount: 121 },
-        { id: '2', message: 'gdsgsdgsgsgs', likesCount: 1245 },
-        { id: '2', message: 'IccccxDDDx', likesCount: 9 }
+        { id: '3', message: 'dddddddddd', likesCount: 121 },
+        { id: '4', message: 'gdsgsdgsgsgs', likesCount: 1245 },
+        { id: '5', message: 'IccccxDDDx', likesCount: 9 }
     ],
     newPostText: '',
     profile: null
-
 }
 
 
@@ -23,7 +22,7 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newPostText: '',
-                posts: [...state.posts, { id: 5, message: newPost, likesCount: 0 }]
+                posts: [...state.posts, { id: 6, message: newPost, likesCount: 0 }]
             }
         }
         case UPDATE_NEW_POST_TEXT: {

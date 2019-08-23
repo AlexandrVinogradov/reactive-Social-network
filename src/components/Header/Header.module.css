@@ -7,3 +7,9 @@
     padding-left: 100px;
     padding-top: 2px;
 }
+.loginBlock {
+    float: right;
+}
+.loginBlock a{
+    color: rgb(201, 124, 24);
+}
