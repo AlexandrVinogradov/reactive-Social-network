@@ -11,7 +11,7 @@ import {
 class HeaderContainer extends React.Component {
 
     componentDidMount() {
-        axios.get('https://social-network.samuraijs.com/api/1.0/auth/me', { // вторым параметром передаем настройки запроса
+        axios.get('https://social-network.samuraijs.com/api/1.0/auth/me', { // вторым параметром передаем настройки запроса (у нас: что мы авторизованны)
             withCredentials: true
         })
             .then(response => {
