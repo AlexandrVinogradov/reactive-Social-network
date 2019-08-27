@@ -1,9 +1,10 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware, } from "redux";
 import profileReducer from "./profile-reducer"
 import newsReducer from "./news-reducer"
 import dialogsReducer from "./dialogs-reducer"
 import usersReducer from "./users-reduser";
 import authReducer from "./auth-reducer";
+import thunkMiddleware from "redux-thunk";
 
 // закомбаинили(создали) редюсеры
 // за каждую ветку отвечает свой редюсер 
@@ -17,7 +18,9 @@ let reducers = combineReducers({
 
 
 // создали store с помощью функции, которая пришла из redux библиотеки
-let store = createStore(reducers);
+let store = createStore(reducers, applyMiddleware(thunkMiddleware)); //applyMiddleware 66 11:00, 
+                                                     // чтобы был промежуточный слой, 
+                                                    //который умеет обраатыватьь функции
 
 window.store = store;
 
