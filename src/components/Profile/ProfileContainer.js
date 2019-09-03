@@ -5,10 +5,12 @@ import {
     getUserProfile
 } from '../../redux/profile-reducer';
 import { withRouter } from 'react-router-dom';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from "redux";
+
 
 
 class ProfileContainer extends React.Component {
-
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
@@ -17,20 +19,22 @@ class ProfileContainer extends React.Component {
         this.props.getUserProfile(userId);
     }
     render() {
+        debugger
         return (
             <Profile {...this.props} profile={this.props.profile} />
         )
     }
 }
 
-// когда функция возвращает объект - надо ставить круглые скобки
+
 const mapStateToProps = (state) => ({
     profile: state.profilePage.profile
-
 });
 
-// withRouter работает как conect. тоже отрисует новую компоненту, но в нее закинутся данные из url 
-// теперь эту переменную в connect вместо ProfileContainer
-let WithUrlDataContainerComponent = withRouter(ProfileContainer)
-
-export default connect(mapStateToProps, { getUserProfile })(WithUrlDataContainerComponent);
+// compose берет Dialog, закидывает его в withAuthRedirect, 
+//далее результат закидывает в withRouter => connect
+export default compose(
+    connect(mapStateToProps, {getUserProfile}),
+    withRouter,
+    withAuthRedirect // это hoc
+)(ProfileContainer);

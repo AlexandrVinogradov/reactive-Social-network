@@ -9,6 +9,8 @@ import {
 } from '../../redux/users-reduser';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from "redux";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -35,7 +37,9 @@ class UsersContainer extends React.Component {
     }
 }
 
-//она передаст эти пропы дальше?-Да, через connect
+
+
+//она передаст эти пропсы дальше?-Да, через connect
 const mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
@@ -47,8 +51,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps,
-    {
-        follow, unfollow, setCurrentPage, toggleFollowingProgress,
-        getUsers
-    })(UsersContainer);
+// compose берет Dialog, закидывает его в withAuthRedirect, 
+//далее результат закидывает в withRouter => connect
+export default compose(
+    connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleFollowingProgress,getUsers}),
+    withAuthRedirect // это hoc
+)(UsersContainer);
