@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -10,9 +11,9 @@ const ProfileInfo = (props) => {
 
     return (
     <div>
-        <div>
+        {/* <div>
             <img className={s.panorama} src='https://wallimpex.com/data/out/642/3840-x-1080-hd-wallpaper-9980030.jpg' />
-        </div>
+        </div> */}
 
         <div className={s.description_block}>
             <div>
@@ -21,10 +22,14 @@ const ProfileInfo = (props) => {
 
             <img src={props.profile.photos.large}/>
 
+
+
             <p>
                 {props.profile.aboutMe}
             </p>
+
         </div>
+        <ProfileStatus status={props.status}  updateStatus={props.updateStatus}/>
         
     </div>
     )
