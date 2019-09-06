@@ -5,6 +5,7 @@ import dialogsReducer from "./dialogs-reducer"
 import usersReducer from "./users-reduser";
 import authReducer from "./auth-reducer";
 import thunkMiddleware from "redux-thunk";
+import { reducer as formReducer } from 'redux-form';
 
 // закомбаинили(создали) редюсеры
 // за каждую ветку отвечает свой редюсер 
@@ -13,7 +14,8 @@ let reducers = combineReducers({
     newsPage: newsReducer,
     dialogsPage: dialogsReducer,
     usersPage: usersReducer,
-    auth: authReducer
+    auth: authReducer,
+    form: formReducer
 });
 
 
