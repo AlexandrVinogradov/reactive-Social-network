@@ -8,10 +8,11 @@ const Header = (props) => {
         <img src="https://cdn2.iconfinder.com/data/icons/playstation-controller-buttons-3/64/playstation-flat-icon-triangle-dark-128.png" />
 
         <div className={s.loginBlock}>
-            {props.isAuth ? props.login
+            {props.isAuth 
+                ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
                 : <NavLink to={"/login"}>Login</NavLink>}
         </div>
-    </header>;
+    </header>
 }
 
 export default Header;
