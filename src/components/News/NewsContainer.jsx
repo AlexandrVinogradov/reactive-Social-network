@@ -1,5 +1,7 @@
 import React from 'react';
-import { addNewActionCreator, updateNewNewsTextActionCreator } from '../../redux/news-reducer';
+import { 
+    addNew 
+} from '../../redux/news-reducer';
 import News from './News';
 import { connect } from 'react-redux';
 
@@ -8,18 +10,20 @@ const mapStateToProps = (state) => {
         newsPage: state.newsPage
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        updateNewNewsText: (text) => {
-            let action = updateNewNewsTextActionCreator(text);
-            dispatch(action);
-        },
-        onSendNewsClick: () => {
-            dispatch(addNewActionCreator());
-        }
-    }
-}
-const NewsContaine = connect(mapStateToProps, mapDispatchToProps)(News);
 
-export default NewsContaine;
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         onSendNewsClick: (newNewsText) => {
+//             dispatch(addNewActionCreator(newNewsText));
+//         }
+//     }
+// }
+
+
+const NewsContainer = connect(mapStateToProps, {
+    addNew
+})(News);
+
+export default NewsContainer;
 

@@ -5,7 +5,6 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 
 let initialState = {
-
     posts: [
         { id: '1', message: 'Hi, how are you?', likesCount: 13 },
         { id: '2', message: '123', likesCount: 19 },

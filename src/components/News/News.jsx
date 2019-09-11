@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './News.module.css';
 import NewsItem from './NewsItem/NewsItem';
+import { reduxForm, Field } from 'redux-form';
 
 const News = (props) => {
 
@@ -9,12 +10,9 @@ const News = (props) => {
     let newsElements = state.news.map(n => <NewsItem content={n.content} id={n.id} />);
     let newsText = state.newsText;
 
-    // let onSendNewsClick = () => {
-    //     props.onSendNewsClick();
-    // }
-    let onAddNews = (e) => {
-        let text = e.target.value;
-        props.updateNewNewsText(text);
+
+    let onAddNews = (values) => {
+        props.addNew(values.newNewsText);
     }
     return (
         <div>
@@ -23,19 +21,25 @@ const News = (props) => {
                 <div>
                     {newsElements}
                 </div>
+                
                 <div>
-                    <textarea onChange={onAddNews}
-                        value={newsText}
-                        placeholder={'Enter your news'} />
-                </div>
-                <button onClick={() => {props.onSendNewsClick()}}>Send News</button>
-                <div>
-
+                    <AddNewsFormRedux onSubmit={onAddNews} />
                 </div>
             </div>
         </div>
     )
 }
 
+const AddNewNewsForm = (props) => {
+    return <form onSubmit={props.handleSubmit}>
+        <div>
+            <Field placeholder="Enter your news" name="newNewsText" component="textarea" />
+        </div>
+        <div>
+            <button>Add news</button>
+        </div>
+    </form>
+}
+const AddNewsFormRedux = reduxForm({form: 'profileAddNewPostForm'})(AddNewNewsForm);
 export default News;
 
