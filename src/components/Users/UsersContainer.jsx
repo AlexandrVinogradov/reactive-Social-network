@@ -55,5 +55,5 @@ const mapStateToProps = (state) => {
 //далее результат закидывает в withRouter => connect
 export default compose(
     connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleFollowingProgress,getUsers}),
-    withAuthRedirect // это hoc
+    //withAuthRedirect 
 )(UsersContainer);
