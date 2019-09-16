@@ -74,6 +74,6 @@ const mapStateToProps = (state) => {
 // compose берет Dialog, закидывает его в withAuthRedirect, 
 //далее результат закидывает в withRouter => connect
 export default compose(
-    connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleFollowingProgress,requestUsers}),
+    connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleFollowingProgress, requestUsers}),
     //withAuthRedirect 
 )(UsersContainer);
