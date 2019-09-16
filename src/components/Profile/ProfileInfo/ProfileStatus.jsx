@@ -3,13 +3,13 @@ import s from './ProfileInfo.module.css';
 
 class ProfileStatus extends React.Component {
     state = {
-        editMod: false
+        editMod: false,
+        status: this.props.status
     }
     activateEditMod = () => {
         // метод из React.Component   71lesson
         this.setState({
             editMod: true,
-            status: this.props.status
         });
     }
     deactivateEditMod = () => {
@@ -27,7 +27,7 @@ class ProfileStatus extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         debugger
         if (prevProps.status !== this.props.status) {
-            this.setState ({
+            this.setState({
                 status: this.props.status
             })
         }
@@ -40,12 +40,15 @@ class ProfileStatus extends React.Component {
             <div>
                 {!this.state.editMod &&
                     <div>
-                        <span onDoubleClick={this.activateEditMod}>{this.props.status || 'NOPE'}</span>
+                        <span onDoubleClick={this.activateEditMod}> {this.props.status || 'NOPE'} </span>
                     </div>
                 }
                 {this.state.editMod &&
                     <div>
-                        <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMod} value={this.state.status} />
+                        <input onChange={this.onStatusChange}
+                            autoFocus={true}
+                            onBlur={this.deactivateEditMod.bind(this)}
+                            value={this.state.status} />
                     </div>
                 }
             </div>
