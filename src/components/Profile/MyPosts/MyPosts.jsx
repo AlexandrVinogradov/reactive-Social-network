@@ -20,13 +20,18 @@ const AddNewPostForm = (props) => {
 }
 const AddPostFormRedux = reduxForm({ form: 'profileAddNewPostForm' })(AddNewPostForm);
 
-const MyPosts = (props) => {
 
+
+
+// для того, чтобы внутрення компонента не отрисоваыволась просто так - оборачиваем ее React.memo, но не работет..
+const MyPosts = React.memo(props => {
+    console.log('RENDER')
     let postElements = props.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount} />);
 
     const addNewPost = (values) => {
         props.addPost(values.newPostText);
     }
+
     return <div className={s.postsBlock}>
         <h3>My posts</h3>
         <div>
@@ -38,5 +43,5 @@ const MyPosts = (props) => {
             {postElements}
         </div>
     </div>;
-}
+});
 export default MyPosts;
