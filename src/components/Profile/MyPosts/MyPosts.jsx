@@ -20,9 +20,6 @@ const AddNewPostForm = (props) => {
 }
 const AddPostFormRedux = reduxForm({ form: 'profileAddNewPostForm' })(AddNewPostForm);
 
-
-
-
 // для того, чтобы внутрення компонента не отрисоваыволась просто так - оборачиваем ее React.memo, но не работет..
 const MyPosts = React.memo(props => {
     console.log('RENDER')
