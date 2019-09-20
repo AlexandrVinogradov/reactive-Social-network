@@ -42,6 +42,7 @@ export const profileAPI = {
 
 
 export const authAPI = {
+    //функция me возвращает promise
     me() {
         return instance.get('auth/me');
     },

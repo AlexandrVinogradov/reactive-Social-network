@@ -21,10 +21,13 @@ import {
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+        // диструктуризация эта может спасити от некоторых неочевидных ситуаций (статья Dan Abramov)
+        const {currentPage, pageSize} = this.props
+        this.props.requestUsers(currentPage, pageSize);
     }
     onPageChanged = (pageNumber) => {
-        this.props.requestUsers(pageNumber, this.props.pageSize);
+        const {pageSize} = this.props;
+        this.props.requestUsers(pageNumber, pageSize);
     }
     render() {
         return <>
@@ -43,23 +46,6 @@ class UsersContainer extends React.Component {
         </>
     }
 }
-
-
-
-
-// const mapStateToProps = (state) => {
-//     debugger
-//     return {
-//         users: state.usersPage.users,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         currentPage: state.usersPage.currentPage,
-//         isFetching: state.usersPage.isFetching,
-//         followingInProgress: state.usersPage.followingInProgress
-//     }
-// }
-
-
 const mapStateToProps = (state) => {
     return {
         users: getUsers(state),
@@ -70,7 +56,6 @@ const mapStateToProps = (state) => {
         followingInProgress: getFollowingInProgress(state)
     }
 }
-
 // compose берет Dialog, закидывает его в withAuthRedirect, 
 //далее результат закидывает в withRouter => connect
 export default compose(

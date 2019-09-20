@@ -1,0 +1,9 @@
+.selectedPage {
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.pages {
+    display: flex;
+
+}
