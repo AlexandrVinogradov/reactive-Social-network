@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import profileReducer from "./profile-reducer"
 import newsReducer from "./news-reducer"
 import dialogsReducer from "./dialogs-reducer"
@@ -20,18 +20,10 @@ let reducers = combineReducers({
     app: appReducer
 });
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
 
-// создали store с помощью функции, которая пришла из redux библиотеки
-let store = createStore(reducers, applyMiddleware(thunkMiddleware)); //applyMiddleware 66 11:00, 
-                                                     // чтобы был промежуточный слой, 
-                                                    //который умеет обраатыватьь функции
-
-window.store = store;
+window.__store__ = store;
 
 export default store;
 
-
-
-// в установленном redux(е) уже есть:
-// subscribe(), getState(), dispatch(action)
-// но нет логики, которую мы прописали в reduser(ы)

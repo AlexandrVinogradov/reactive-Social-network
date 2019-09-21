@@ -18,7 +18,6 @@ it('length of posts should be incremented', () => {
     // 3. expectation 
     expect(newState.posts.length).toBe(6);
   });
-
 it('message of new posts should be correct', () => {
     // 1. test data
     let action = addPost('test-profile-red');
