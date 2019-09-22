@@ -71,4 +71,5 @@ const SamuraiJSApp = props => {
     </Provider>
   </BrowserRouter> 
 }
+
 export default SamuraiJSApp;
