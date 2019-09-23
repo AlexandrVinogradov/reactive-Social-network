@@ -1,4 +1,5 @@
 import * as axios from 'axios';
+import { savePhoto } from '../redux/profile-reducer';
 
 // создание инстанса (у axios есть такая функция)
 const instance = axios.create({
@@ -37,6 +38,16 @@ export const profileAPI = {
     },
     updateStatus(status) {
         return instance.put('/profile/status/', {status: status});
+    },
+    savePhoto(photoFile) { // когда отправляем файл type не json  27:00 (96)
+        const formData = new FormData();
+        formData.append('image', photoFile);
+
+        return instance.put('/profile/photo', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
     }
 }
 

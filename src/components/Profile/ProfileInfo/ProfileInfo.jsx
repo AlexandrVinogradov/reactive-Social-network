@@ -5,9 +5,14 @@ import ProfileStatus from './ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import userPhoto from '../../../assets/images/user.jpg';
 
-const ProfileInfo = ({profile, status, updateStatus}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
     if (!profile) {
         return <Preloader />
+    }
+    const mainPhotoSelectrd = (e) => {
+        if (e.target.files.length) {
+            savePhoto(e.target.files[0]);
+        }
     }
     return (
     <div>
@@ -15,14 +20,8 @@ const ProfileInfo = ({profile, status, updateStatus}) => {
             <img className={s.panorama} src='https://wallimpex.com/data/out/642/3840-x-1080-hd-wallpaper-9980030.jpg' />
         </div> */}
         <div className={s.description_block}>
-            <div>
-                <img className={s.avatar} src='https://previews.123rf.com/images/bigio/bigio1602/bigio160200004/52547413-sch%C3%B6ne-zuckersch%C3%A4del-frau-illustration-tag-der-toten-vektor-illustration-.jpg' />
-            </div>
-
-            <img src={profile.photos.large
-            != null 
-            ? profile.photos.large
-            : userPhoto}/>
+            <img className={s.avatar} src={profile.photos.large || userPhoto}/>
+            {isOwner && <input type={'file'} onChange={mainPhotoSelectrd}/>}
             <p>
                 {profile.aboutMe}
             </p>
