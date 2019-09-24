@@ -18,3 +18,7 @@
   /* display: block; */
   grid-area: c;
 }
+
+.contact {
+  padding-left: 30px;
+}

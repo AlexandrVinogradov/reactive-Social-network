@@ -23,7 +23,7 @@ const AddPostFormRedux = reduxForm({ form: 'profileAddNewPostForm' })(AddNewPost
 // для того, чтобы внутрення компонента не отрисоваыволась просто так - оборачиваем ее React.memo, но не работет..
 const MyPosts = React.memo(props => {
     console.log('RENDER')
-    let postElements = props.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount} />);
+    let postElements = props.profilePage.posts.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
 
     const addNewPost = (values) => {
         props.addPost(values.newPostText);
