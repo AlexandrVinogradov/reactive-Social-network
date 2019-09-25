@@ -18,7 +18,7 @@ import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
 
 import store from './redux/redux-store';
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 class App extends React.Component {
@@ -26,9 +26,9 @@ class App extends React.Component {
     this.props.initializeApp();
   }
   render() {
-    if (!this.props.initialized) {
-      return <Preloader />
-    }
+    // if (!this.props.initialized) {
+    //   return <Preloader />
+    // }
     return (
       <div className='app-wrapper'>
         <HeaderContainer />
@@ -65,11 +65,11 @@ const AppContainer = compose(
   withRouter)(App);
 
 const SamuraiJSApp = props => {
-  return <BrowserRouter>
+  return <HashRouter>
     <Provider store={store}>
       <AppContainer />
     </Provider>
-  </BrowserRouter> 
+  </HashRouter> 
 }
 
 export default SamuraiJSApp;
