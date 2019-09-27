@@ -10,11 +10,11 @@ const maxLength10 = maxLenghtCreator(10);
 const AddNewPostForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
         <div>
-            <Field validate={[required, maxLength10]} placeholder="Enter your post"
+            <Field className={s.input} validate={[required, maxLength10]} placeholder="Enter your post"
                 name="newPostText" component={Textarea} />
         </div>
         <div>
-            <button>Add post</button>
+            <button className={s.button}>Add post</button>
         </div>
     </form>
 }

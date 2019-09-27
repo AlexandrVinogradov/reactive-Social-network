@@ -12,9 +12,15 @@ import s from './../common/FormsControls/FormsControls.module.css';
 
 const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
     return <form onSubmit={handleSubmit}>
+        <div className={s.input}>
         {createField("Email", "email", [required], Input)}
+        </div>
+        <div className={s.input}>
         {createField("Password", "password", [required], Input, { type: "password" })}
+        </div>
+        <div className={s.checkbox}>
         {createField(null, "rememberMe", [], Input, { type: "checkbox" }, "remember me")}
+        </div>
 
         {captchaUrl && <img src={captchaUrl} />}
         {captchaUrl && createField('Symbols', "captcha", [required], Input, {}) }
@@ -29,15 +35,15 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
 }
 const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 
+
+
 const Login = (props) => {
     const onSubmit = (formData) => {
         props.login(formData.email, formData.password, formData.rememberMe, formData.captcha )
     }
-
     if (props.isAuth) {
         return <Redirect to={"/profile"} />
     }
-
     return <div>
         <h1>LOGIN</h1>
         <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />

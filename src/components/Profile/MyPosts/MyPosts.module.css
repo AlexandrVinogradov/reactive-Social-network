@@ -1,4 +1,13 @@
-.content {
-  grid-area: c;
-  background-color: rgb(29, 29, 29);
+.input {
+  width: 500px;
+}
+
+.button {
+  color: #fff;
+  background-color: #000;
+  padding: 10px 30px;
+  border-radius: 0px;
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
 }
