@@ -37,6 +37,7 @@ class App extends React.Component {
     window.removeEventListener("unhandledrejection", this.catchAllUnhandleErrors);
   }
 
+  
   render() {
     if (!this.props.initialized) {
       return <Preloader />
