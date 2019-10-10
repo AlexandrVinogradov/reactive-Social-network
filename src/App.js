@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Friends from './components/Friends/Friends';
-import { Route, withRouter, HashRouter } from "react-router-dom";
+import { Route, withRouter, HashRouter, Switch, Redirect } from "react-router-dom";
 //import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NewsContainer from './components/News/NewsContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -22,9 +22,21 @@ const DialogsContainer = React.lazy(() => import ('./components/Dialogs/DialogsC
 
 
 class App extends React.Component {
+
+  catchAllUnhandleErrors = (reason, promise) => {
+    alert('some error occured');
+  }
+
   componentDidMount() {
     this.props.initializeApp();
+    // отлавливаем все ошибки 
+    window.addEventListener("unhandledrejection", this.catchAllUnhandleErrors);
   }
+  componentWillUnmount() {
+    // убираем мусор за собой
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandleErrors);
+  }
+
   render() {
     if (!this.props.initialized) {
       return <Preloader />
@@ -35,9 +47,11 @@ class App extends React.Component {
         <Navbar />
         <div className='app-wraper-content'> 
 
+        <Switch>
+          <Route exact path='/'
+            render={() => <Redirect to={'/profile'} />} />
           <Route path='/dialogs'
             render={withSuspense(DialogsContainer)} />
-
           <Route path='/profile/:userId?'
             render={() => <ProfileContainer />} />
           <Route path='/news'
@@ -50,9 +64,11 @@ class App extends React.Component {
             render={() => <Friends />} />
           <Route path='/users'
             render={() => <UsersContainer />} />
-
           <Route path='/login'
             render={() => <Login />} />
+          <Route path='*'
+            render={() => <div>404 NOT FOUND</div>} />
+        </Switch>
         </div>
       </div>
     )
