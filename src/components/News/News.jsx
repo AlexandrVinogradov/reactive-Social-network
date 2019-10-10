@@ -6,7 +6,7 @@ import { reduxForm, Field } from 'redux-form';
 const News = (props) => {
 
     let state = props.newsPage;
-
+    debugger
     let newsElements = state.news.map(n => <NewsItem content={n.content} id={n.id} />);
     let newsText = state.newsText;
 
@@ -14,14 +14,14 @@ const News = (props) => {
     let onAddNews = (values) => {
         props.addNew(values.newNewsText);
     }
+
     return (
         <div>
             News
             <div>
                 <div>
-                    {newsElements}
+                    {newsElements}  
                 </div>
-                
                 <div>
                     <AddNewsFormRedux onSubmit={onAddNews} />
                 </div>

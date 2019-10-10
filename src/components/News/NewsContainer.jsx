@@ -5,21 +5,12 @@ import {
 import News from './News';
 import { connect } from 'react-redux';
 
+
 const mapStateToProps = (state) => {
     return {
         newsPage: state.newsPage
     }
 }
-
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         onSendNewsClick: (newNewsText) => {
-//             dispatch(addNewActionCreator(newNewsText));
-//         }
-//     }
-// }
-
 
 const NewsContainer = connect(mapStateToProps, {
     addNew

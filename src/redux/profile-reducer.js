@@ -1,5 +1,4 @@
 import { usersAPI, profileAPI } from "../api/api";
-import { async } from "q";
 import { stopSubmit } from "redux-form";
 
 
