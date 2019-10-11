@@ -1,13 +1,27 @@
-.input {
+input {
   width: 500px;
 }
 
 .button {
-  color: #fff;
+  /* color: #fff;
   background-color: #000;
   padding: 10px 30px;
   border-radius: 0px;
   font-weight: 800;
-  font-size: 18px;
-  text-transform: uppercase;
+  font-size: 18px; */
+
+
+  /* text-transform: uppercase; */
+
+
+  color: white;
+  background-color: rgb(37, 202, 153);
+  border-radius: 100px;
+  border: none;
+  padding: 15px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 14px;
+  /* height: 100px; */
+
 }

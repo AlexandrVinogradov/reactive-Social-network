@@ -43,8 +43,9 @@ class App extends React.Component {
       return <Preloader />
     }
     return (
+      <div>
+      <HeaderContainer />
       <div className='app-wrapper'>
-        <HeaderContainer />
         <Navbar />
         <div className='app-wraper-content'> 
 
@@ -71,6 +72,7 @@ class App extends React.Component {
             render={() => <div>404 NOT FOUND</div>} />
         </Switch>
         </div>
+      </div>
       </div>
     )
   }

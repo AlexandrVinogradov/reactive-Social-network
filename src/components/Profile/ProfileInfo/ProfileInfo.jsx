@@ -25,25 +25,32 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
 
     return (
         <div>
-            {/* <div>
-            <img className={s.panorama} src='https://wallimpex.com/data/out/642/3840-x-1080-hd-wallpaper-9980030.jpg' />
-        </div> */}
             <div className={s.description_block}>
-                <img className={s.avatar} src={profile.photos.large || userPhoto} />
-                {isOwner && <input type={'file'} onChange={mainPhotoSelectrd} />}
-
-                {editMode
+                <div className={s.highBlock}>
+                    <div>
+                        <img className={s.avatar} src={profile.photos.large || userPhoto} />
+                        <label for='file'>
+                            Choose avatar
+                        </label>
+                    </div>
+                    {editMode
                     ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> //initialValues передаем profile, как стартовые значения
                     : <ProfileData goToEditMode={() => { setEditMode(true) }} profile={profile} isOwner={isOwner} />}
+
+                </div>
+                {isOwner && <input type={'file'} id='file' onChange={mainPhotoSelectrd} />}
+
+
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+
             </div>
-            <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
         </div>
     )
 }
 const ProfileData = ({ profile, isOwner, goToEditMode }) => {
     return <div>
         <div>
-            {isOwner && <button onClick={goToEditMode}>Edit</button>}
+            {isOwner && <button className={s.btnEdit} onClick={goToEditMode}>Edit</button>}
         </div>
         <ul>
             <li>

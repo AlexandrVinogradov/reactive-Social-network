@@ -1,15 +1,18 @@
 .nav {
     grid-area: n;
-    background-color: rgb(39, 35, 35);
+    background-color: rgba(59, 51, 51, 0.5);
+
+
+    height: 100vh;
 }
 .ul {
     padding: 15px 0 0 15px;
 }
 .item a {
-    color:rgb(201, 124, 24);
+    color:rgb(24, 166, 201);
 }
 .item a.active {
-    color:rgb(0, 217, 255);
+    color:rgb(0, 174, 255);
 }
 .friends {
 

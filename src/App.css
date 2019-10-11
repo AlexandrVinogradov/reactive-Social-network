@@ -1,20 +1,21 @@
 body {
-  background-color: rgb(29, 29, 29);
-  color:rgb(201, 124, 24);
+  background-image: url('./assets/images/back.jpg');
+  color:white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .app-wrapper {
-  background-color: rgb(29, 29, 29);
   margin: 0 auto;
-  width: 1200px;
+  width: 1000px;
   display: grid;
 
   grid-template-areas:
-  "h h"
   "n c";
 
-  grid-template-rows: 60px 1fr;
+  /* grid-template-rows: 60px 1fr; */
   grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
+  grid-gap: 30px;
 }
 ul, li {
   margin: 0;
@@ -24,17 +25,9 @@ ul, li {
 a {
   text-decoration: none;
 }
-
-.app-wrapper-content {
-  .content {
+.app-wraper-content {
     grid-area: c;
-    background-color: rgb(29, 29, 29);
-  }
-  .panorama {
+    background-color: rgba(59, 51, 51, 0.6);
     width: auto;
-    height: 300px;
-  }
-  .avatar {
-    width: 200px;
-  }
+    padding: 30px;
 }

@@ -10,10 +10,8 @@ const Navbar = () => {
             <li className={s.item}><NavLink to="/news" activeClassName={s.active} >News</NavLink></li>
             <li className={s.item}><NavLink to="/music" activeClassName={s.active} >Music</NavLink></li>
             <li className={s.item}><NavLink to="/settings" activeClassName={s.active} >Settings</NavLink></li>
-
-
-
-            <div>
+            <li className={s.item}><NavLink to="/users" activeClassName={s.active} >Users</NavLink></li>
+            {/* <div>
                 <div>
                 <li className={s.item + ' ' + s.friends}><NavLink to="/friends" activeClassName={s.active} >Friends</NavLink></li>
                 </div>
@@ -22,12 +20,12 @@ const Navbar = () => {
                     <li><img className={s.avatar} src="https://pp.userapi.com/c855416/v855416570/9f462/9NJrz3aIiZQ.jpg" />Roberto</li>
                     <li><img className={s.avatar} src="https://ru1.anyfad.com/items/t1@39b8c2ad-babb-4e7d-a605-ef103a97049d/Chikano-Art.jpg" />Gabriela</li>
                 </ul>
-            </div>
-
-            <li className={s.item}><NavLink to="/users" activeClassName={s.active} >Users</NavLink></li>
-
+            </div> */}
         </ul>
     </nav>;
 }
+
+
+
 
 export default Navbar;

@@ -1,15 +1,36 @@
 .header {
     grid-area: h;
-    background-color: rgb(39, 35, 35);
+    background-color: rgb(39, 165, 223);
+    width: 100%;
 }
 .header img {
     width: 55px;
-    padding-left: 100px;
+    /* padding-left: 360px; */
     padding-top: 2px;
 }
 .loginBlock {
     float: right;
+    padding-top: 15px;
 }
-.loginBlock a{
-    color: rgb(201, 124, 24);
+.container {
+    width: 1000px;
+    margin: 0 auto;
 }
+.exitBtn {
+    color: white;
+    background-color: rgba(59, 51, 51, 0.6);
+    border-radius: 100px;
+    border: none;
+    padding: 5px;
+    width: 70px;
+    cursor: pointer;
+}
+/* .exitBtn  {
+
+        background: no-repeat;
+        cursor:pointer;
+        width: 200px;
+        height: 10px;
+        border: none;
+    
+} */
