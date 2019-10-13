@@ -10,9 +10,10 @@
 }
 .item a {
     color:rgb(24, 166, 201);
+    font-weight: 500;
 }
 .item a.active {
-    color:rgb(0, 174, 255);
+    color:rgb(0, 132, 255);
 }
 .friends {
 
@@ -21,4 +22,13 @@
     width: 50px;
     height: 50px;
     border-radius: 50px;
+}
+.a {
+    display: flex;
+}
+.name {
+    padding-left: 10px;
+}
+.item {
+    padding-bottom: 13px;
 }

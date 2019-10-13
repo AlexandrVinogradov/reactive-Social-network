@@ -1,34 +1,35 @@
-.dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-
-
-
-
+.usersMessage {
+    display: flex;
 }
 
-.dialogs_items {
-    padding: 10px;
-}
 .dialogs_items .active {
-    color:rgb(0, 217, 255);
+    color:rgb(19, 88, 100);
 }
-.user {
 
-}
 .user a {
-    color:rgb(201, 124, 24);
+    color:rgb(24, 166, 201);
+    font-weight: 500;
 }
-.user .active {
-    color:rgb(0, 217, 255);
+.user a.active {
+    color:rgb(0, 132, 255);
+}
+.dialogs_items li{
+    padding-bottom: 10px;
+}
+.messages li {
+    padding-bottom: 10px;
+    padding-left: 50px;
 }
 
-.messages {
-    padding: 10px;
-}
-.message {
-
-}
 
 
-
+button {
+    width: 160px!important;
+    color: white;
+    background-color: rgb(37, 202, 153);
+    border-radius: 100px;
+    border: none;
+    padding: 5px;
+    width: 70px;
+    cursor: pointer;
+} 

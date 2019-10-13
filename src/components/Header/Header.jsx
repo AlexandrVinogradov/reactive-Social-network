@@ -6,7 +6,10 @@ import { NavLink } from 'react-router-dom';
 const Header = (props) => {
     return <header className={s.header}>
         <div className={s.container}>
-        <img src="https://img.icons8.com/ios/2x/react-native.png" />
+        <NavLink to={'/'}>
+            <img src="https://img.icons8.com/ios/2x/react-native.png" />
+        </NavLink>
+
 
         <div className={s.loginBlock}>
             {props.isAuth 
@@ -16,5 +19,4 @@ const Header = (props) => {
         </div>
     </header>
 }
-
 export default Header;

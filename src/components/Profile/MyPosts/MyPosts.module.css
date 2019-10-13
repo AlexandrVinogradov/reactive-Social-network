@@ -1,6 +1,7 @@
-input {
+/* 
+ textarea {
   width: 500px;
-}
+} */
 
 .button {
   /* color: #fff;
@@ -9,11 +10,7 @@ input {
   border-radius: 0px;
   font-weight: 800;
   font-size: 18px; */
-
-
   /* text-transform: uppercase; */
-
-
   color: white;
   background-color: rgb(37, 202, 153);
   border-radius: 100px;
@@ -24,4 +21,11 @@ input {
   font-size: 14px;
   /* height: 100px; */
 
+}
+.FormsControls_textarea__FQuZ9 { 
+  width: 740px;
+  line-height: 1.5;
+  border-radius: 40px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
 }
