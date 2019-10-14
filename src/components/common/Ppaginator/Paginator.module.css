@@ -7,16 +7,15 @@
     display: flex;
 
 }
-
-
 .paginator {
     margin: 10px;
 }
 .pageNumber {
     padding: 2px;
-    border: 1px solid grey;
+    cursor: pointer;
+
 }
 .pageNumber.selectedPage {
     font-weight: bold;
-    border-color: black;
+    color:rgb(0, 132, 255);
 }

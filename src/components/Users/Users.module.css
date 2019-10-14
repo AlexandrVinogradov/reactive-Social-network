@@ -2,3 +2,20 @@
     height: 100px;
     border-radius: 100px;
 }
+.preloader {
+    padding-left: 50px;
+    position: absolute;
+    left: 400px;
+    top: 160px;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btnFollou {
+    justify-content: center;
+}
+.child {
+    justify-content: center;
+}

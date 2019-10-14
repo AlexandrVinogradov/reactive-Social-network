@@ -3,7 +3,6 @@ import Paginator from '../common/Ppaginator/Paginator';
 import User from './User';
 
 let Users = ({ currentPage, totalUsersCount, pageSize, onPageChanged, users, ...props }) => {
-    debugger
     return <div>
         <Paginator currentPage={currentPage}
             totalItemsCount={totalUsersCount}

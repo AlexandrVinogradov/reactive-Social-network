@@ -9,6 +9,7 @@ import {
 } from '../../redux/users-reduser';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
+import s from './Users.module.css';
 import { compose } from "redux";
 import { 
     getUsers,
@@ -31,7 +32,7 @@ class UsersContainer extends React.Component {
     }
     render() {
         return <>
-            {this.props.isFetching ? <Preloader /> : null}
+            {this.props.isFetching ? <div className={s.preloader}><Preloader /></div> : null}
 
             <Users users={this.props.users}
                 pageSize={this.props.pageSize}
@@ -42,6 +43,8 @@ class UsersContainer extends React.Component {
                 follow={this.props.follow}
                 toggleIsFetching={this.props.toggleIsFetching}
                 followingInProgress={this.props.followingInProgress}
+
+
             />
         </>
     }
