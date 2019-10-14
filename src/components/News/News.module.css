@@ -1,0 +1,10 @@
+.btnAddNew {
+    width: 150px;
+}
+.newsBlock {
+    padding-bottom: 10px;
+}
+.newsBlock li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

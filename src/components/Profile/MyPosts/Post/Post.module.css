@@ -1,8 +1,21 @@
 .item {
 padding-top: 15px;
+/* background-color: rgba(59, 51, 51, 0.5); */
+margin-top: 35px;
+margin-bottom: 35px;
+
 }
 .item img{
   height: 50px;
   width: 50px;
   border-radius: 30px;
+}
+.post i{
+  color:rgb(24, 166, 201);
+  padding-right: 7px;
+}
+.line {
+  border: 1px solid white;
+  width: 400px;
+  margin-top: 15px;
 }

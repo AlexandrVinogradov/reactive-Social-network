@@ -1,15 +1,21 @@
 import React from 'react';
 import s from './Post.module.css';
+import avatar from '../../../../assets/images/avatar.jpg';
 
-const Post = (props) => {
+export const Post = React.memo(props => {
     return <div className={s.item}>
-        <img src="https://i.pinimg.com/originals/09/4f/c6/094fc6adfddb1ba0fc6f73083e7c03bf.jpg" />
+        <img src={avatar} />
         {props.message}
-        <div>
+        <div className={s.post}>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
             {props.likesCount}
             <span> like</span>
+
         </div>
+        <div className={s.line}></div>
     </div>;
-}
+});
 
 export default Post;
+
+

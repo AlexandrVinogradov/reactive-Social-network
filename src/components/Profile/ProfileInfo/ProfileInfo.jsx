@@ -22,7 +22,6 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
             }
         );
     }
-
     return (
         <div>
             <div className={s.description_block}>
@@ -76,6 +75,9 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
     </div>
 }
 const Contact = ({ contactTitle, contactValue }) => {
+    if (contactValue === "" || contactValue === null) {
+        return contactTitle = null
+    }
     return <div className={s.contact}>
         <b>{contactTitle}</b>: {contactValue}
     </div>

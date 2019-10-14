@@ -3,21 +3,8 @@
   width: 200px;
   height: 200px;
   border-radius: 100px;
-align-items: flex-end;
+  align-items: flex-end;
 }
-
-
-/* .description_block {
-  display: grid;
-
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
-} */
-
-/* .description_block p {
-  grid-area: c;
-} */
 
 .contact {
   padding-left: 30px;
@@ -45,16 +32,29 @@ label {
   height: 20px;
   width: 120px;
   background-color: rgb(37, 202, 153);
-  /* position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; */
   font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
-
+.textarea {
+  outline:none;
+  padding: 4px;
+  width: 40px;
+  line-height: 1.5;
+  border-radius: 40px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+.btnSave {
+  color: white;
+  background-color: rgb(37, 202, 153);
+  border-radius: 100px;
+  border: none;
+  padding: 5px;
+  width: 70px;
+  cursor: pointer;
+}

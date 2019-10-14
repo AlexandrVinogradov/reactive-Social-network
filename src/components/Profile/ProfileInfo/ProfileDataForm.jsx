@@ -7,7 +7,7 @@ import { createField, Input, Textarea } from '../../common/FormsControls/FormsCo
 
 const ProfileDataForm = ({ handleSubmit, profile, error }) => {
     return <form onSubmit={handleSubmit}>
-        <div><button>Save</button></div>
+        <div><button className={s.btnSave}>Save</button></div>
         {error && <div className={sForm.formSummaryError}>
             {error}
         </div>
@@ -26,14 +26,14 @@ const ProfileDataForm = ({ handleSubmit, profile, error }) => {
 
         
                 <li>
-                    <b>My professionals skills</b>: {createField("My skills", "lookingForAJobDescription", [], Textarea)}
+                    <b>My professionals skills</b>: <div className={s.field}>{createField("My skills", "lookingForAJobDescription", [], Textarea)}</div>
                 </li>
             
 
             <li>
                 <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
                     return <div key={key} className={s.contact}>
-                        <d>{key}: {createField(key, "contacts." + key, [], Input)}</d>
+                        <b>{key}: {createField(key, "contacts." + key, [], Input)}</b>
                     </div>
                 })}
             </li>

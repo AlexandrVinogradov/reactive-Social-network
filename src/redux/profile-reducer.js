@@ -12,13 +12,12 @@ const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
 let initialState = {
     posts: [
         { id: '1', message: 'Hi, how are you?', likesCount: 13 },
-        { id: '2', message: '123', likesCount: 19 },
-        { id: '3', message: 'dddddddddd', likesCount: 121 },
-        { id: '4', message: 'gdsgsdgsgsgs', likesCount: 1245 },
-        { id: '5', message: 'IccccxDDDx', likesCount: 9 }
+        { id: '2', message: 'Can you help me with react?', likesCount: 19 },
+        { id: '3', message: 'Looking for a job', likesCount: 121 }
     ],
     profile: null,
-    status: ''
+    status: '',
+    photos: '3'
 }
 
 

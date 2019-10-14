@@ -23,13 +23,3 @@
 
 
 
-button {
-    width: 160px!important;
-    color: white;
-    background-color: rgb(37, 202, 153);
-    border-radius: 100px;
-    border: none;
-    padding: 5px;
-    width: 70px;
-    cursor: pointer;
-} 

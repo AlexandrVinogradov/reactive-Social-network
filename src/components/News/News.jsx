@@ -2,24 +2,19 @@ import React from 'react';
 import s from './News.module.css';
 import NewsItem from './NewsItem/NewsItem';
 import { reduxForm, Field } from 'redux-form';
+import { Textarea } from '../common/FormsControls/FormsControls';
 
 const News = (props) => {
-
     let state = props.newsPage;
-    debugger
     let newsElements = state.news.map(n => <NewsItem content={n.content} id={n.id} />);
-    let newsText = state.newsText;
-
-
     let onAddNews = (values) => {
         props.addNew(values.newNewsText);
     }
-
     return (
         <div>
-            News
+            <b>News:</b>
             <div>
-                <div>
+                <div className={s.newsBlock}>
                     {newsElements}  
                 </div>
                 <div>
@@ -29,14 +24,13 @@ const News = (props) => {
         </div>
     )
 }
-
 const AddNewNewsForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
         <div>
-            <Field placeholder="Enter your news" name="newNewsText" component="textarea" />
+            <Field placeholder="Enter your news" name="newNewsText" component={Textarea} />
         </div>
         <div>
-            <button>Add news</button>
+            <button className={s.btnAddNew}>Add news</button>
         </div>
     </form>
 }

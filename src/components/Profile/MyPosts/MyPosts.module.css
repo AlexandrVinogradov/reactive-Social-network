@@ -1,16 +1,4 @@
-/* 
- textarea {
-  width: 500px;
-} */
-
 .button {
-  /* color: #fff;
-  background-color: #000;
-  padding: 10px 30px;
-  border-radius: 0px;
-  font-weight: 800;
-  font-size: 18px; */
-  /* text-transform: uppercase; */
   color: white;
   background-color: rgb(37, 202, 153);
   border-radius: 100px;
@@ -19,8 +7,6 @@
   width: 200px;
   cursor: pointer;
   font-size: 14px;
-  /* height: 100px; */
-
 }
 .FormsControls_textarea__FQuZ9 { 
   width: 740px;
@@ -28,4 +14,7 @@
   border-radius: 40px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px #999;
+}
+.title {
+  padding-top: 30px;
 }
