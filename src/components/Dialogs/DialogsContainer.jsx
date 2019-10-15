@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from "redux";
 
-
-
 const mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage
@@ -18,10 +16,8 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-
-
-// compose берет Dialog, закидывает его в withAuthRedirect, далее результат закидывает в connect
+// compose transfer Dialogs in withAuthRedirect => expression transfer in connect
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
-    withAuthRedirect // это hoc
+    withAuthRedirect 
 )(Dialogs);

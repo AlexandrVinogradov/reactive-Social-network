@@ -31,7 +31,3 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
         </div>
 }
 export default User;
-
-// if (user.status === null) {
-//     return 'nope';
-// } else user.status

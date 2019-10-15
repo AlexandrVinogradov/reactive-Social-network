@@ -28,13 +28,11 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
                 <div className={s.highBlock}>
                     <div>
                         <img className={s.avatar} src={profile.photos.large || userPhoto} />
-
-                        { isOwner &&
+                        {isOwner &&
                             <label for='file'>
                                 Choose avatar
                             </label>
                         }
-
                     </div>
                     {editMode
                         ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> //initialValues передаем profile, как стартовые значения
@@ -42,8 +40,7 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
 
                 </div>
                 {isOwner && <input type={'file'} id='file' onChange={mainPhotoSelectrd} />}
-
-
+                
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
 
             </div>

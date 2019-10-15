@@ -2,7 +2,6 @@ import React from "react";
 import { create } from "react-test-renderer";
 import ProfileStatus from "./ProfileStatus";
 
-//если компонента получает через пропсы статус - он должен ерейти в стейт
 describe("ProfileStatus component", () => {
     test("status from props should be in state", () => {
       const component = create(<ProfileStatus status="it-kamasutra.com" />);

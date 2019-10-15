@@ -10,7 +10,7 @@ const maxLength10 = maxLenghtCreator(10);
 const AddNewPostForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
         <div>
-            <Field className={s.textarea} validate={[required, maxLength10]} 
+            <Field className={s.textarea} validate={[required, maxLength10]}
                 name="newPostText" component={Textarea} />
         </div>
         <div>
@@ -19,16 +19,15 @@ const AddNewPostForm = (props) => {
     </form>
 }
 const AddPostFormRedux = reduxForm({ form: 'profileAddNewPostForm' })(AddNewPostForm);
-
-// для того, чтобы внутрення компонента не отрисоваыволась просто так - оборачиваем ее React.memo, но не работет..
+// React.memo doesnt works...
 const MyPosts = React.memo(props => {
-    console.log('RENDER')
-    let postElements = props.profilePage.posts.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
+    // console.log('RENDER MYPOSTS')
+    let postElements = props.profilePage.posts.map(p =>
+        <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
 
     const addNewPost = (values) => {
         props.addPost(values.newPostText);
     }
-
     return <div className={s.postsBlock}>
         <h3 className={s.title}>My posts</h3>
         <div>

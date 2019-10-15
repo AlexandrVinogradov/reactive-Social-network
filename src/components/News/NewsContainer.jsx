@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
     addNew 
 } from '../../redux/news-reducer';
@@ -11,7 +10,6 @@ const mapStateToProps = (state) => {
         newsPage: state.newsPage
     }
 }
-
 const NewsContainer = connect(mapStateToProps, {
     addNew
 })(News);

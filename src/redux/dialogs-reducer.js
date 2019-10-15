@@ -1,5 +1,5 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
-// initialState - одноразовый объект, если state не придет в state - ты встанешь тудва вместо него 
+
 let initialState = {
     dialogs: [
         { id: '1', name: 'Adriana' },
@@ -16,10 +16,6 @@ let initialState = {
     ]
 }
 const dialogsReducer = (state = initialState, action) => {
-    // делаем копию стейта, чтобы connect перерисовывал изменения
-    // так как в объекте есть еще объекты их надо тоже скопировать 
-    // dialogs меняться не будет, поэтому его не копируем
-
     switch (action.type) {
         case ADD_MESSAGE:
             let newMessage = action.newMessageBody;
@@ -32,7 +28,6 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
-// action creator
 export const addMessageActionCreator = (newMessageBody) => ({ type: ADD_MESSAGE, newMessageBody });
 
 export default dialogsReducer;

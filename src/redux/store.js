@@ -1,6 +1,7 @@
 import profileReducer from "./profile-reducer";
 import newsReducer from "./news-reducer";
 import dialogsReducer from "./dialogs-reducer";
+// this just example of redux`s store. This store doesn`t used in project
 
 let store = {
     _state: {
@@ -43,15 +44,14 @@ let store = {
     _callSubscriber() {
         console.log('state chanhed');
     },
-    // Функция, которая сообщает внешнему миру, что state изменился (паттерн)
+    // subscride says UI that state changed
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    // метод для взятия файлов из store 
     getState() {
         return this._state;
     },
-    // dispatch Метод из которого можно дергать функции
+    // dispatch 
     dispatch(action) {   // { type: 'ADD-POST' }
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.newsPage = newsReducer(this._state.newsPage, action);

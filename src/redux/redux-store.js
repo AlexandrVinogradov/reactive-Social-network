@@ -8,8 +8,7 @@ import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from 'redux-form';
 import appReducer from "./app-reducer";
 
-// закомбаинили(создали) редюсеры
-// за каждую ветку отвечает свой редюсер 
+// branch - reducer
 let reducers = combineReducers({
     profilePage: profileReducer,
     newsPage: newsReducer,

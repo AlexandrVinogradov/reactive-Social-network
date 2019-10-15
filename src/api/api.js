@@ -1,7 +1,5 @@
 import * as axios from 'axios';
-import { savePhoto } from '../redux/profile-reducer';
 
-// создание инстанса (у axios есть такая функция)
 const instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
@@ -27,8 +25,6 @@ export const usersAPI = {
         return profileAPI.getProfile(userId);
     }
 }
-
-
 export const profileAPI = {
     getProfile(userId) {
         return instance.get(`profile/` + userId);
@@ -37,9 +33,9 @@ export const profileAPI = {
         return instance.get('/profile/status/' + userId);
     },
     updateStatus(status) {
-        return instance.put('/profile/status/', {status: status});
+        return instance.put('/profile/status/', { status: status });
     },
-    savePhoto(photoFile) { // когда отправляем файл type не json  27:00 (96)
+    savePhoto(photoFile) { //  27:00 (96)
         const formData = new FormData();
         formData.append('image', photoFile);
 
@@ -49,25 +45,22 @@ export const profileAPI = {
             }
         });
     },
-    saveProfile(profile) { 
+    saveProfile(profile) {
         return instance.put('/profile', profile);
     }
 }
-
-
 export const authAPI = {
-    //функция me возвращает promise
+    //function me returns promise
     me() {
         return instance.get('auth/me');
     },
     login(email, password, rememberMe = false, captcha = null) {
-        return instance.post('auth/login', {email, password, rememberMe, captcha});
+        return instance.post('auth/login', { email, password, rememberMe, captcha });
     },
     logout() {
         return instance.delete('auth/login');
     },
 }
-
 export const securityAPI = {
     getCaptchaUrl() {
         return instance.get('security/get-captcha-url');

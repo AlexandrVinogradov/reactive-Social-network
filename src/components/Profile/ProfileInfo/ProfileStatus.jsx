@@ -6,7 +6,6 @@ class ProfileStatus extends React.Component {
         status: this.props.status
     }
     activateEditMod = () => {
-        // метод из React.Component   71lesson
         this.setState({
             editMod: true,
         });
@@ -22,7 +21,6 @@ class ProfileStatus extends React.Component {
             status: e.currentTarget.value
         });
     }
-
     componentDidUpdate(prevProps, prevState) {
         debugger
         if (prevProps.status !== this.props.status) {
@@ -31,7 +29,6 @@ class ProfileStatus extends React.Component {
             })
         }
     }
-
     render() {
         return (
             <div>

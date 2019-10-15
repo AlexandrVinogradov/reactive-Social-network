@@ -11,7 +11,7 @@ import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
 import s from './Users.module.css';
 import { compose } from "redux";
-import { 
+import {
     getUsers,
     getPageSize,
     getTotalUsersCount,
@@ -22,12 +22,11 @@ import {
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        // диструктуризация эта может спасити от некоторых неочевидных ситуаций (статья Dan Abramov)
-        const {currentPage, pageSize} = this.props
+        const { currentPage, pageSize } = this.props
         this.props.requestUsers(currentPage, pageSize);
     }
     onPageChanged = (pageNumber) => {
-        const {pageSize} = this.props;
+        const { pageSize } = this.props;
         this.props.requestUsers(pageNumber, pageSize);
     }
     render() {
@@ -43,8 +42,6 @@ class UsersContainer extends React.Component {
                 follow={this.props.follow}
                 toggleIsFetching={this.props.toggleIsFetching}
                 followingInProgress={this.props.followingInProgress}
-
-
             />
         </>
     }
@@ -59,9 +56,7 @@ const mapStateToProps = (state) => {
         followingInProgress: getFollowingInProgress(state)
     }
 }
-// compose берет Dialog, закидывает его в withAuthRedirect, 
-//далее результат закидывает в withRouter => connect
 export default compose(
-    connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleFollowingProgress, requestUsers}),
+    connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, requestUsers }),
     //withAuthRedirect 
 )(UsersContainer);

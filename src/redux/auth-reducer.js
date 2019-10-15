@@ -15,7 +15,7 @@ let initialState = {
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER_DATA:
-        case GET_CAPTCHA_URL_SECCESS: // фишка payload - можем сократить код (99  24:00)
+        case GET_CAPTCHA_URL_SECCESS: // (99  24:00)
             return {
                 ...state,
                 ...action.payload
@@ -41,7 +41,7 @@ export const getAuthUserData = () => async (dispatch) => {
         dispatch(setAuthUserData(id, email, login, true));
     }
 }
-
+// thunk
 export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
     const response = await authAPI.login(email, password, rememberMe, captcha);
     if (response.data.resultCode === 0) {
