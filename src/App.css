@@ -13,9 +13,10 @@ body {
   grid-template-areas:
   "n c";
 
-  /* grid-template-rows: 60px 1fr; */
   grid-template-columns: 2fr 10fr;
   grid-gap: 30px;
+
+  height: 100vh;
 }
 ul, li {
   margin: 0;
@@ -26,10 +27,10 @@ a {
   text-decoration: none;
 }
 .app-wraper-content {
-    grid-area: c;
-    background-color: rgba(59, 51, 51, 0.6);
-    width: auto;
-    padding: 30px;
+  grid-area: c;
+  background-color: rgba(59, 51, 51, 0.6);
+  width: auto;
+  padding: 30px;
 }
 button {
   color: white;
@@ -40,3 +41,7 @@ button {
   width: 70px;
   cursor: pointer;
 } 
+p {
+  margin: 0;
+  padding: 0;
+}

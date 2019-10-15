@@ -24,7 +24,7 @@ const DialogsContainer = React.lazy(() => import ('./components/Dialogs/DialogsC
 class App extends React.Component {
 
   catchAllUnhandleErrors = (reason, promise) => {
-    alert('some error occured');
+    // alert('some error occured');
   }
 
   componentDidMount() {
@@ -45,6 +45,7 @@ class App extends React.Component {
     return (
       <div>
       <HeaderContainer />
+      
       <div className='app-wrapper'>
         <Navbar />
         <div className='app-wraper-content'> 

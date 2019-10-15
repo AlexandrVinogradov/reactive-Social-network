@@ -28,13 +28,17 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
                 <div className={s.highBlock}>
                     <div>
                         <img className={s.avatar} src={profile.photos.large || userPhoto} />
-                        <label for='file'>
-                            Choose avatar
-                        </label>
+
+                        { isOwner &&
+                            <label for='file'>
+                                Choose avatar
+                            </label>
+                        }
+
                     </div>
                     {editMode
-                    ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> //initialValues передаем profile, как стартовые значения
-                    : <ProfileData goToEditMode={() => { setEditMode(true) }} profile={profile} isOwner={isOwner} />}
+                        ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> //initialValues передаем profile, как стартовые значения
+                        : <ProfileData goToEditMode={() => { setEditMode(true) }} profile={profile} isOwner={isOwner} />}
 
                 </div>
                 {isOwner && <input type={'file'} id='file' onChange={mainPhotoSelectrd} />}

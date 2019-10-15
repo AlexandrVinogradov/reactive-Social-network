@@ -1,21 +1,23 @@
 .avatar {
-    height: 100px;
+    height: 120px;
     border-radius: 100px;
+    /* width: 100px; */
 }
+/* .avatarLink {
+    cursor: pointer;
+} */
 .preloader {
-    padding-left: 50px;
+    /* padding-left: 50px; */
     position: absolute;
-    left: 400px;
+    left: 830px;
     top: 160px;
 }
 .userInfo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-bottom: 20px;
 }
 .btnFollou {
-    justify-content: center;
-}
-.child {
-    justify-content: center;
+    margin: 10px 0px 5px 20px;
+    cursor: pointer;
 }

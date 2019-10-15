@@ -3,8 +3,8 @@
   background-color: rgb(37, 202, 153);
   border-radius: 100px;
   border: none;
-  padding: 15px;
-  width: 200px;
+  /* padding: 15px; */
+  width: 150px;
   cursor: pointer;
   font-size: 14px;
 }

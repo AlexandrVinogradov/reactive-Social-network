@@ -25,6 +25,17 @@
     width: 70px;
     cursor: pointer;
 }
+.loginBtn {
+    color: white;
+    padding-left: 15px;
+}
+.loginBtnBlock {
+    background-color: rgba(59, 51, 51, 0.6);
+    border-radius: 100px;
+    width: 70px;
+    height: 25px;
+
+}
 /* .exitBtn  {
 
         background: no-repeat;

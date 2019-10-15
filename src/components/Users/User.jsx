@@ -12,22 +12,26 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                     : userPhoto} className={s.avatar} />
             </NavLink>
         </div>
-        <div>
+        <div className={s.btnFollou}>
             {user.followed
                 ? <button disabled={followingInProgress
                     .some(id => id === user.id)}
                     onClick={() => { unfollow(user.id) }}>
                     Unfollow</button>
 
-                : <button className={s.btnFollou} disabled={followingInProgress
+                : <button  disabled={followingInProgress
                     .some(id => id === user.id)}
                     onClick={() => { follow(user.id) }}>
                     Follow</button>}
         </div>
-        <div>
-            <div>{user.name}</div>
-            <div>{user.status}</div>
+        <div className={s.userName}>
+            <div>Name: {user.name}</div>
+            <div>Status: {user.status || 'nope'}</div>
         </div>
         </div>
 }
 export default User;
+
+// if (user.status === null) {
+//     return 'nope';
+// } else user.status

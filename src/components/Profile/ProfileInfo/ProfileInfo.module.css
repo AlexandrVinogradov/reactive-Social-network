@@ -39,6 +39,7 @@ label {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .textarea {
   outline:none;
