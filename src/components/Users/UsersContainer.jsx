@@ -6,7 +6,7 @@ import {
     setCurrentPage,
     toggleFollowingProgress,
     requestUsers
-} from '../../redux/users-reduser';
+} from '../../redux/users-reducer';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
 import s from './Users.module.css';
@@ -41,7 +41,7 @@ class UsersContainer extends React.Component {
                 unfollow={this.props.unfollow}
                 follow={this.props.follow}
                 toggleIsFetching={this.props.toggleIsFetching}
-                followingInProgress={this.props.followingInProgress}
+                followingInProgress={this.props.followingInProgress} 
             />
         </>
     }

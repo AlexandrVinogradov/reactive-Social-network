@@ -1,5 +1,4 @@
-const ADD_NEW = 'ADD-NEW';
-
+const ADD_NEW = 'react-network/news/ADD-NEW';
 
 let initialState = {
     news: [
@@ -8,7 +7,6 @@ let initialState = {
         { id: '3', content: 'And while you may already have heard of some of its new features, we`ll recall all of them! Plus some ECMAScript details and a sneak-peak of what`s coming next!' }
     ],
 }
-
 
 const newsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -24,8 +22,6 @@ const newsReducer = (state = initialState, action) => {
     }
 }
 
-// action creator
 export const addNew = (newNewsText) => ({ type: ADD_NEW, newNewsText });
-
 
 export default newsReducer;
