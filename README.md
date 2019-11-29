@@ -1,6 +1,6 @@
 ## My first learning React application</br></br>
 
-### `It is deployed on gh-pages:`</br>https://alexandrvinogradov.github.io/First-react-project/#/
+### `It is deployed on gh-pages:`</br>https://alexandrvinogradov.github.io/reactive-Social-network/#/
 
 
 ### `for testin app you may use:`</br>Email: free@samuraijs.com</br>Password: free
