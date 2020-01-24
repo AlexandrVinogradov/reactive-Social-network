@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39d4774516e26dc6e98b2c2ea9d8455e",
+    "revision": "f7239cb13c1cb9700e3bd3df17515673",
     "url": "/reactive-Social-network/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reactive-Social-network/static/css/3.a00ba81d.chunk.css"
   },
   {
-    "revision": "8e2379af15fd8b2fe35d",
-    "url": "/reactive-Social-network/static/css/main.4206c10c.chunk.css"
+    "revision": "a6d9da4f22ca648ccb94",
+    "url": "/reactive-Social-network/static/css/main.3dfe4afc.chunk.css"
   },
   {
     "revision": "42daaa17544e65f74045",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reactive-Social-network/static/js/3.543019aa.chunk.js"
   },
   {
-    "revision": "8e2379af15fd8b2fe35d",
-    "url": "/reactive-Social-network/static/js/main.660f7c1f.chunk.js"
+    "revision": "a6d9da4f22ca648ccb94",
+    "url": "/reactive-Social-network/static/js/main.24dab3ae.chunk.js"
   },
   {
     "revision": "743b3c271ba459260ab9",
