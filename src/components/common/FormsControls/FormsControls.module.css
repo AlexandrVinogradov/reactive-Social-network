@@ -31,8 +31,10 @@
     border-radius: 40px;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px #999;
+    margin-top: 10px;
 }
 .checkbox {
+    padding: 10px 0 10px 0;
     display: flex;
 }
 

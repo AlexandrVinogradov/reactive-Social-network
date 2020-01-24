@@ -47,7 +47,7 @@ const AddPostFormRedux = reduxForm({ form: 'profileAddNewPostForm' })(AddNewPost
 class MyPosts extends PureComponent {
 
     render() {
-        console.log('RENDER MYPOSTS')
+        // console.log('RENDER MYPOSTS')
         let postElements = this.props.profilePage.posts.map(p =>
             <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
 

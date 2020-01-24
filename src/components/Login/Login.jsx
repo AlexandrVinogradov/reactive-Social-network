@@ -8,7 +8,11 @@ import { Redirect } from 'react-router-dom';
 import s from './../common/FormsControls/FormsControls.module.css';
 import l from './Login.module.css';
 
+
+
+
 const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
+
     return <form onSubmit={handleSubmit}>
         <div className={s.input}>
             {createField("Email", "email", [required], Input)}
@@ -17,7 +21,7 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
             {createField("Password", "password", [required], Input, { type: "password" })}
         </div>
         <div className={s.checkbox}>
-            {createField(null, "rememberMe", [], Input, { type: "checkbox" }, "remember me")}
+            {createField(null, "rememberMe", [], Input, { type: "checkbox" })} remember me
         </div>
 
         {captchaUrl && <img src={captchaUrl} />}
@@ -43,7 +47,7 @@ const Login = (props) => {
     return <div className={l.loginBlock}>
         <div>
             <h1>LOGIN</h1>
-            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
+            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} initialValues={props.initialValues} />
         </div>
         <div className={l.loginInfo}>
             <p>Hello if you haven`t account you can use:</p>
@@ -55,6 +59,10 @@ const Login = (props) => {
 }
 const mapStateToProps = (state) => ({
     captchaUrl: state.auth.captchaUrl,
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    initialValues: {
+        email: 'free@samuraijs.com',
+        password: 'free'
+      }
 })
 export default connect(mapStateToProps, { login })(Login);

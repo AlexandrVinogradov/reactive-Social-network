@@ -78,6 +78,8 @@ const mapStateToProps = (state) => ({
 const AppContainer = compose(
   connect(mapStateToProps, { initializeApp }),
   withRouter)(App);
+
+  
 const SamuraiJSApp = props => {
   return <HashRouter>
     <Provider store={store}>
