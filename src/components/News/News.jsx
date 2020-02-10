@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './News.module.css';
+import s from './News.module.scss';
 import NewsItem from './NewsItem/NewsItem';
 import { reduxForm, Field } from 'redux-form';
 import { Textarea } from '../common/FormsControls/FormsControls';

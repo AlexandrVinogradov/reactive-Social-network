@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.css';
+import React from 'react'; 
+import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';

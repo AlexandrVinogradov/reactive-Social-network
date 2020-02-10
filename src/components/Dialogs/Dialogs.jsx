@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Dialogs.module.css';
+import s from './Dialogs.module.scss';
 import DialogItem from './DialogItem/DialogItem';
 import MessageItem from './MessageItem/MessageItem';
 import AddMessageForm from './AddMessageForm/AddMessageForm';

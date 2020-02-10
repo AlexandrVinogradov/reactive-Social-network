@@ -9,7 +9,7 @@ import {
 } from '../../redux/users-reducer';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
-import s from './Users.module.css';
+import s from './Users.module.scss';
 import { compose } from "redux";
 import {
     getUsers,

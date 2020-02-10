@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Post.module.css';
+import s from './Post.module.scss';
 import avatar from '../../../../assets/images/avatar.jpg';
 
 export const Post = React.memo(props => {

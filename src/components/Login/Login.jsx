@@ -5,8 +5,8 @@ import { required } from '../../utils/validators/validators';
 import { connect } from 'react-redux';
 import { login } from '../../redux/auth-reducer';
 import { Redirect } from 'react-router-dom';
-import s from './../common/FormsControls/FormsControls.module.css';
-import l from './Login.module.css';
+import s from './../common/FormsControls/FormsControls.module.scss';
+import l from './Login.module.scss';
 
 
 

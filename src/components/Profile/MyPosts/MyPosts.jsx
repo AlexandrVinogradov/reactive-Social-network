@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import s from './MyPosts.module.css';
+import s from './MyPosts.module.scss';
 import Post from './Post/Post';
 import { reduxForm, Field } from 'redux-form';
 import { required, maxLenghtCreator } from '../../../utils/validators/validators';

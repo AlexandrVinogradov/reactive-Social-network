@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './../News.module.css';
+import s from './../News.module.scss';
 import { NavLink } from 'react-router-dom';
 
 const NewsItem = (props) => {
