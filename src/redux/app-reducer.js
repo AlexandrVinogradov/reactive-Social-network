@@ -2,7 +2,7 @@ import { getAuthUserData } from "./auth-reducer";
 
 const INITIALIZED_SUCCESS = 'react-network/app/INITIALIZED_SUCCESS';
 
-let initialState = {
+const initialState = {
     initialized: false
 }
 
@@ -21,11 +21,11 @@ const appReducer = (state = initialState, action) => {
 export const initializedSuccess = () => ({ type: INITIALIZED_SUCCESS });
 
 export const initializeApp = () => (dispatch) => {
-    let promise = dispatch(getAuthUserData());
+    const promise = dispatch(getAuthUserData());
 
     Promise.all([promise])
         .then(() => {
-            dispatch(initializedSuccess()); //80 20:00
+            dispatch(initializedSuccess()); // 80 20:00
         });
 
 }
